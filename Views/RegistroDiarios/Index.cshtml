@@ -1,0 +1,101 @@
+﻿@model IEnumerable<TaxiApp.Models.RegistroDiario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalDia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Combustible)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PagoBase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PagoConductor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PagoDueno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gastos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eliminado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Taxi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalDia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Combustible)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PagoBase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PagoConductor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PagoDueno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gastos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eliminado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Taxi.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
