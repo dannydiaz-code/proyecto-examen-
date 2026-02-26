@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using TaxiApp.Data;
+using TaxiApp.Filters;
 using TaxiApp.Models;
 
 namespace TaxiApp.Controllers
 {
+    [SessionFilter]
     public class UsuariosController : Controller
     {
         private readonly ApplicationDbContext _context;
